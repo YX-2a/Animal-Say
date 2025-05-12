@@ -8,21 +8,22 @@ def draw (text, ascci_file) :
 			line_list = file.readlines ()
 			for line in line_list :
 				print (line , end ="")
+			print("\n")
 				
 	except FileNotFoundError:
-		print ("File Doesn't exist")
+		print ("File Doesn't exist\n")
 	
 	except TypeError:
-		print ("Text given isn't string")
+		print ("Text given isn't string\n")
 		
 	except PermissionError:
-		print ("You aren't permited to read file or directory")
+		print ("You aren't permited to read file or directory\n")
 	
 	except UnicodeDecodeError:
-		print ("File isn't a text file")
+		print ("File isn't a text file\n")
 		
 	except IsADirectoryError:
-		print ("The Specified file is a directory")
+		print ("The Specified file is a directory\n")
 		
 	except OSError:
-		print ("Operating System Error")
+		print ("Operating System Error\n")
