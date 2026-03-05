@@ -1,7 +1,7 @@
 def draw (text, ascci_file) :
 	try :
 		print (" "*10 + "/" + "^"*(len(text)) + "\\")
-		print (" "*11 + text)
+		print (" "*9 + "| " + text + " |")
 		print (" "*10 + "\\" + "_"*(len(text)) + "/")
 		print (" "*10 +"/" + "\n" + " "*9 + "/")
 		with open (ascci_file, "r") as file :
