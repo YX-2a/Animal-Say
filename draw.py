@@ -11,19 +11,16 @@ def draw (text, ascci_file) :
 			print("\n")
 				
 	except FileNotFoundError:
-		print ("File Doesn't exist\n")
+		print (f"{ascci_file} doesn't exist.\n")
 	
 	except TypeError:
-		print ("Text given isn't string\n")
+		print (f"{ascci_file} given isn't string.\n")
 		
 	except PermissionError:
-		print ("You aren't permited to read file or directory\n")
+		print (f"permission denied (you can't access {ascci_file}).\n")
 	
 	except UnicodeDecodeError:
-		print ("File isn't a text file\n")
+		print (f"{ascci_file} is in an unexpected encoding (not UTF-8 or ANSI).\n")
 		
 	except IsADirectoryError:
-		print ("The Specified file is a directory\n")
-		
-	except OSError:
-		print ("Operating System Error\n")
+		print (f"{ascci_file} is a directory, not a file.\n")

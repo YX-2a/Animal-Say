@@ -2,7 +2,7 @@
 ## Description:
 ```
           /^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\
-           animalsay is a cowsay-like program made in python.
+         | animalsay is a cowsay-like program made in python.  |
           \___________________________________________________/
           /
          /
@@ -15,7 +15,7 @@
 
 
           /^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\
-           With the ability to change into diffrent ascci animals !
+         | With the ability to change into diffrent ascci animals ! |
           \________________________________________________________/
           /
          /
@@ -31,9 +31,9 @@
          W     W
 
 
-          /^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\
-           And You can make your own animal by just making a text file and creating your animal !
-          \_______________________________________________________________________________________/
+          /^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\
+         | And You can make your own animal by just making a text file with anything in it, let your imagination run wild !  |
+          \_________________________________________________________________________________________________________________/
           /
          /
      (\__/)
@@ -41,9 +41,9 @@
  /     /\o/
 
 	   
-          /^^^^^^^^^^^^^^^^\
-           With ASCCI Art
-          \________________/
+          /^^^^^^^^^^^^^^^\
+         | With ASCCI Art  |
+          \_______________/
           /
          /
    _______
@@ -56,7 +56,7 @@
 ## Installation:
 ```
          /^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\
-          run the command : git clone https://github.com/YX-2a/Animal-Say.git
+        | run the command : git clone https://github.com/YX-2a/Animal-Say.git |
          \___________________________________________________________________/
          /
         /
@@ -66,7 +66,7 @@
     \_____/
 	
           /^^^^^^^^^^^^^^^^^^^\
-           As For The Usage :
+         | As For The Usage :  |
           \___________________/
           /
          /
@@ -81,7 +81,7 @@ ______/
 ### In *nix Systems :
 ```
           /^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\
-           The Syntax Is: python3 main.py (text file) 'string' or string (the quotations don't matter)
+         | The Syntax Is: python3 main.py (text file) 'string' or string (the quotations don't matter)  |
           \____________________________________________________________________________________________/
           /
          /
@@ -94,7 +94,7 @@ ______/
 ### In Windows Systems :
 ```
           /^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\
-           The Syntax Is (CMD): main.py (text file) 'string' or string (the quotations don't matter)
+         | The Syntax Is (CMD): main.py (text file) 'string' or string (the quotations don't matter)  |
           \__________________________________________________________________________________________/
           /
          /
@@ -104,7 +104,7 @@ ______/
 |  |
 
           /^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\
-           The Syntax Is (PS): python main.py (text file) 'string' or string (the quotations don't matter)
+         | The Syntax Is (PS): python main.py (text file) 'string' or string (the quotations don't matter)  |
           \________________________________________________________________________________________________/
           /
          /
