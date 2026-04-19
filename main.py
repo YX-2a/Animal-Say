@@ -7,9 +7,7 @@ for arg in argv [2:] :
 	args.append (arg + " ")
 
 if args == [] :
-		print ("Syntax :\n\tmain.py <ascci animal> <words>")
+		print ("Syntax :\n\tmain.py <ascci animal directory> <words>")
 
 else :
 	draw ("".join (args), argv[1])
-
-
