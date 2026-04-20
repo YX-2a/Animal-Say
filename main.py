@@ -1,13 +1,41 @@
 from sys import argv
 from draw import draw
 
-args = []
+string = ""
+animal = ""
+escape = False
+def_dir = "./animals"
+help_text = f"usage: {argv[0]} [options] animal \"string\"\noptions:\n\t-d, --directory DIR\tDirectory of the animals (Default is {def_dir})\n\t-h, --help\t\tDisplay This Text\n\t-e, --escape\t\tAllow escape sequences (\\n, \\t etc...)\n"
 
-for arg in argv [2:] :
-	args.append (arg + " ")
+if len(argv) <= 1:
+	print("Not Enough Arguments")
+	exit()
 
-if args == [] :
-		print ("Syntax :\n\tmain.py <ascci animal directory> <words>")
+if argv[1] == "-h" or argv[1] == "--help":
+	print(help_text)
 
-else :
-	draw ("".join (args), argv[1])
+if "-e" in argv or "--encoding" in argv:
+	escape = True
+	if "-e" in argv:
+		argv.pop(argv.index("-e"))
+	
+	elif "--encoding" in argv:
+		argv.pop(argv.index("--encoding"))
+
+elif argv[1] == "-d" or argv[1] == "--directory":
+	if len(argv) <= 4:
+		print("Not Enough Arguments")
+		exit()
+
+	def_dir = argv[2]
+	argv.pop(1)
+	argv.pop(2)
+
+animal = argv[1]
+string = argv[2]
+
+if escape:
+	string = string.replace("\\n","\n").replace("\\t","\t").replace('\\"','"').replace("\\\\","\\")
+
+print(argv)
+draw (string, def_dir + "/" + animal + ".txt")
