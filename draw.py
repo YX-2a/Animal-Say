@@ -1,8 +1,24 @@
-def draw (text, ascci_file) :
+def len_of_text(text):
+	if "\n" in text:
+		texts = text.split("\n")
+		max_len = len(texts[0])
+		for elem in texts:
+			if len(elem) > max_len:
+				max_len = len(elem)
+		return max_len
+	
+	else:
+		return len(text)
+
+def draw (text, ascci_file):
 	try :
-		print (" "*10 + "/" + "^"*(len(text)) + "\\")
-		print (" "*9 + "| " + text + " |")
-		print (" "*10 + "\\" + "_"*(len(text)) + "/")
+		text = text.expandtabs(4)
+		lenght = len_of_text(text)
+		lines = text.split("\n")
+		print (" "*10 + "/" + "^"*lenght + "\\")
+		for line in lines:
+			print (" "*9 + "| " + line + " "*(lenght-len(line)) + " |")
+		print (" "*10 + "\\" + "_"*lenght + "/")
 		print (" "*10 +"/" + "\n" + " "*9 + "/")
 		with open (ascci_file, "r") as file :
 			line_list = file.readlines ()
