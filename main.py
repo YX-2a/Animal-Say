@@ -35,8 +35,31 @@ animal = argv[1]
 string = argv[2]
 
 if escape:
-	string = string.replace("\\n","\n").replace("\\t","\t").replace('\\"','"').replace("\\\\","\\")
+	result_string = ""
+	sequence = ""
+	for char in string:
+		if char == "\\":
+			sequence += char
+		else:
+			if sequence:
+				if len(sequence) == 1:
+					print(repr(sequence[-1]))
+					result_string += (sequence[0] + char).encode().decode("unicode_escape")
+				
+				elif len(sequence) % 2 == 0:
+					result_string += sequence[:len(sequence)//2]
+					result_string += char
+				
+				else:
+					seq = sequence[:-1]
+					result_string += seq[:len(seq)//2 ]
+					result_string += (sequence[-1] + char).encode().decode("unicode_escape")
+				sequence = ""
+			
+			else:
+				result_string += char
 
+print(repr(result_string))
 print(argv)
 sep = ""
 
@@ -46,4 +69,4 @@ if def_dir[-1] != "/":
 elif def_dir[-1] != "\\":
 	sep = "\\"
 
-draw (string, def_dir + sep + animal + ".txt")
+draw (result_string, def_dir + sep + animal + ".txt")
