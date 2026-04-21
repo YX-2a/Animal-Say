@@ -22,14 +22,14 @@ if "-e" in argv or "--encoding" in argv:
 	elif "--encoding" in argv:
 		argv.pop(argv.index("--encoding"))
 
-elif argv[1] == "-d" or argv[1] == "--directory":
+if argv[1] == "-d" or argv[1] == "--directory":
 	if len(argv) <= 4:
 		print("Not Enough Arguments")
 		exit()
 
 	def_dir = argv[2]
 	argv.pop(1)
-	argv.pop(2)
+	argv.pop(1)
 
 animal = argv[1]
 string = argv[2]
@@ -38,4 +38,12 @@ if escape:
 	string = string.replace("\\n","\n").replace("\\t","\t").replace('\\"','"').replace("\\\\","\\")
 
 print(argv)
-draw (string, def_dir + "/" + animal + ".txt")
+sep = ""
+
+if def_dir[-1] != "/":
+	sep = "/"
+
+elif def_dir[-1] != "\\":
+	sep = "\\"
+
+draw (string, def_dir + sep + animal + ".txt")
