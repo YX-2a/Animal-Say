@@ -85,13 +85,13 @@ ______/
   __\ /__
  vvv\-/vvv
 
-          /^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\
-         | options:                                                        |
-         |     -d, --directory DIR  Directory of the animals               |
-         |     -h, --help           Display Help                           |
-         |     -e, --escape         Allow escape sequences (\n, \t etc...) |
-         |                                                                 |
-          \_______________________________________________________________/
+          /^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\
+         | options:                                                                  |
+         |     -d, --directory DIR     Directory of the animals                      |
+         |     -h, --help              Display This Text                             |
+         |     -e, --escape            Allow escape sequences (\n, \t etc...)        |
+         |     -o, --offset NUM        Offset the text bubble by NUM (Default is 10) |
+          \_________________________________________________________________________/
           /
          /
     |\---/|

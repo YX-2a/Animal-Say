@@ -10,16 +10,16 @@ def len_of_text(text):
 	else:
 		return len(text)
 
-def draw (text, ascci_file):
+def draw (text, ascci_file, offset):
 	try :
 		text = text.expandtabs(4)
 		lenght = len_of_text(text)
 		lines = text.split("\n")
-		print (" "*10 + "/" + "^"*lenght + "\\")
+		print (" "*offset + "/" + "^"*lenght + "\\")
 		for line in lines:
-			print (" "*9 + "| " + line + " "*(lenght-len(line)) + " |")
-		print (" "*10 + "\\" + "_"*lenght + "/")
-		print (" "*10 +"/" + "\n" + " "*9 + "/")
+			print (" "*(offset - 1) + "| " + line + " "*(lenght-len(line)) + " |")
+		print (" "*offset + "\\" + "_"*lenght + "/")
+		print (" "*offset +"/" + "\n" + " "*(offset - 1) + "/")
 		with open (ascci_file, "r") as file :
 			line_list = file.readlines ()
 			for line in line_list :

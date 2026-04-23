@@ -4,8 +4,9 @@ from draw import draw
 string = ""
 animal = ""
 escape = False
+offset = 10
 def_dir = "./animals"
-help_text = f"usage: {argv[0]} [options] animal \"string\"\noptions:\n\t-d, --directory DIR\tDirectory of the animals (Default is {def_dir})\n\t-h, --help\t\tDisplay This Text\n\t-e, --escape\t\tAllow escape sequences (\\n, \\t etc...)\n"
+help_text = f"usage: {argv[0]} [options] animal \"string\"\noptions:\n\t-d, --directory DIR\tDirectory of the animals (Default is {def_dir})\n\t-h, --help\t\tDisplay This Text\n\t-e, --escape\t\tAllow escape sequences (\\n, \\t etc...)\n\t-o, --offset NUM\tOffset the text bubble by NUM (Default is {offset})"
 
 if len(argv) <= 1:
 	print("Not Enough Arguments")
@@ -13,6 +14,7 @@ if len(argv) <= 1:
 
 if argv[1] == "-h" or argv[1] == "--help":
 	print(help_text)
+	exit()
 
 if "-e" in argv or "--encoding" in argv:
 	escape = True
@@ -21,6 +23,17 @@ if "-e" in argv or "--encoding" in argv:
 	
 	elif "--encoding" in argv:
 		argv.pop(argv.index("--encoding"))
+
+if "-o" in argv or "--offset" in argv:
+	if "-o" in argv:
+		offset = int(argv[argv.index("-o") + 1])
+		argv.pop(argv.index("-o") + 1)
+		argv.pop(argv.index("-o"))
+
+	elif "--offset" in argv:
+		offset = int(argv[argv.index("--offset") + 1])
+		argv.pop(argv.index("--offset") + 1)
+		argv.pop(argv.index("--offset"))
 
 if argv[1] == "-d" or argv[1] == "--directory":
 	if len(argv) <= 4:
@@ -43,7 +56,6 @@ if escape:
 		else:
 			if sequence:
 				if len(sequence) == 1:
-					print(repr(sequence[-1]))
 					result_string += (sequence[0] + char).encode().decode("unicode_escape")
 				
 				elif len(sequence) % 2 == 0:
@@ -58,9 +70,8 @@ if escape:
 			
 			else:
 				result_string += char
+	string = result_string
 
-print(repr(result_string))
-print(argv)
 sep = ""
 
 if def_dir[-1] != "/":
@@ -69,4 +80,4 @@ if def_dir[-1] != "/":
 elif def_dir[-1] != "\\":
 	sep = "\\"
 
-draw (result_string, def_dir + sep + animal + ".txt")
+draw (string, def_dir + sep + animal + ".txt", offset)
