@@ -1,4 +1,4 @@
-from sys import argv
+from sys import argv, exit
 from os import path, name as os_name
 from draw import draw
 
@@ -25,7 +25,7 @@ elif os_name == "posix":
 
 def_dir = default_dir + "animals"
 
-help_text = f"usage: {argv[0]} [options] animal \"string\"\noptions:\n\t-d, --directory DIR\tDirectory of the animals (Default is {def_dir})\n\t-h, --help\t\tDisplay This Text\n\t-e, --escape\t\tAllow escape sequences (\\n, \\t etc...)\n\t-o, --offset NUM\tOffset the text bubble by NUM (Default is {offset})"
+help_text = f"usage: {path.basename(argv[0])} [options] animal \"string\"\noptions:\n\t-d, --directory DIR\tDirectory of the animals (Default is {def_dir})\n\t-h, --help\t\tDisplay This Text\n\t-e, --escape\t\tAllow escape sequences (\\n, \\t etc...)\n\t-o, --offset NUM\tOffset the text bubble by NUM (Default is {offset})"
 
 if len(argv) <= 1:
 	print("Not Enough Arguments")
@@ -35,13 +35,13 @@ if argv[1] == "-h" or argv[1] == "--help":
 	print(help_text)
 	exit()
 
-if "-e" in argv or "--encoding" in argv:
+if "-e" in argv or "--escape" in argv:
 	escape = True
 	if "-e" in argv:
 		argv.pop(argv.index("-e"))
 	
-	elif "--encoding" in argv:
-		argv.pop(argv.index("--encoding"))
+	elif "--escape" in argv:
+		argv.pop(argv.index("--escape"))
 
 if "-o" in argv or "--offset" in argv:
 	if "-o" in argv:
