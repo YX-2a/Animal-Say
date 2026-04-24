@@ -1,11 +1,30 @@
 from sys import argv
+from os import path, name as os_name
 from draw import draw
 
 string = ""
 animal = ""
 escape = False
 offset = 10
-def_dir = "./animals"
+
+default_dir = ""
+if os_name == "nt":
+	default_dir = path.expandvars("%APPDATA%\\animsay\\")
+	if not path.exists(default_dir):
+		default_dir = path.expanduser("%PROGRAMDATA%\\animsay\\")
+		if not path.exists(default_dir):
+			default_dir = "./"
+
+elif os_name == "posix":
+	default_dir = path.expanduser("~/.config/animsay/")
+	if not path.exists(default_dir):
+		default_dir = "/etc/animsay/"
+		if not path.exists(default_dir):
+			default_dir = "./"
+
+
+def_dir = default_dir + "animals"
+
 help_text = f"usage: {argv[0]} [options] animal \"string\"\noptions:\n\t-d, --directory DIR\tDirectory of the animals (Default is {def_dir})\n\t-h, --help\t\tDisplay This Text\n\t-e, --escape\t\tAllow escape sequences (\\n, \\t etc...)\n\t-o, --offset NUM\tOffset the text bubble by NUM (Default is {offset})"
 
 if len(argv) <= 1:
